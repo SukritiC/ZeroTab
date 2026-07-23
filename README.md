@@ -63,31 +63,89 @@ Follow these steps to get ZeroTab up and running:
    python -m zerotab.main
    ```
 
+## ⚙️ Usage & Testing
+
+### Running the Daemon
+
+By default, the daemon runs in the foreground. You can pass configuration options via command-line flags.
+
+To run the daemon targeting a specific browser with custom settings:
+```bash
+python3 -m zerotab.main --browser safari --timeout 300 --poll 5
+```
+*(Check `python3 -m zerotab.main --help` for all available options)*
+
+### Running Unit Tests
+To verify the core LRU logic and Storage compression, run the built-in `unittest` suite:
+```bash
+python3 -m unittest discover tests/
+```
+
+### Manual Testing & Execution
+
+**For macOS (Native):**
+macOS is natively supported via AppleScript. Simply run the daemon targeting your browser of choice (`chrome`, `safari`, `edge`, `brave`, `opera`):
+```bash
+python3 -m zerotab.main --browser chrome --timeout 30
+```
+Open a few tabs in your browser, wait 30 seconds without interacting with them, and watch them suspend to a lightweight local stub!
+
+**For Windows & Linux (Chromium Browsers):**
+To keep the tool zero-dependency, Windows and Linux use the Chrome Remote Debugging Protocol.
+1. Launch your browser from the terminal with the debugging port exposed:
+   ```bash
+   # Windows (Chrome)
+   chrome.exe --remote-debugging-port=9222
+   # Linux (Chrome)
+   google-chrome --remote-debugging-port=9222
+   ```
+2. Start the ZeroTab daemon:
+   ```bash
+   python3 -m zerotab.main --browser chrome --timeout 30
+   ```
+
 ## 💻 Supported Browsers
 
 - **Google Chrome** (macOS, Linux, Windows)
-- **Mozilla Firefox** (macOS, Linux, Windows)
+- **Microsoft Edge** (macOS, Linux, Windows)
+- **Brave Browser** (macOS, Linux, Windows)
+- **Opera** (macOS, Linux, Windows)
 - **Safari** (macOS)
-*(Note: Browser support depends on the underlying OS Process APIs available.)*
 
-## ⚙️ Usage & Configuration
-
-By default, the daemon runs in the foreground. You can pass configuration options via command-line flags or environment variables (coming soon).
-
-To run the daemon with custom settings (example):
-```bash
-python -m zerotab.main --timeout 300 --max-ram 4096
-```
-*(Check back for more detailed configuration options as they are implemented!)*
+*(Note: Firefox is currently not supported natively as it lacks required AppleScript and CDP tab-query endpoints without heavy modification.)*
 
 ## 🤝 Contributing
 
 We welcome contributions! If you have suggestions for improvements, found a bug, or want to add support for a new browser:
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+
+- Fork the repository
+- Create your feature branch (`git checkout -b feature/AmazingFeature`)
+- Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+- Push to the branch (`git push origin feature/AmazingFeature`)
+- Open a Pull Request
+
+---
+
+## 🚀 Check Out TBRly!
+
+<table>
+  <tr>
+    <td rowspan="2" align="center" valign="middle">
+      <img src="assets/logo.jpeg" width=750" alt="TBRly Logo">
+    </td>
+    <td>
+      If you appreciate tools like ZeroTab that streamline your workflow and boost productivity, you'll love <strong>TBRly</strong>! It's our product built for professionals who want to organize and reclaim their time.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      🔗 <strong><a href="#">Visit the TBRly Website</a></strong> <em>(Add your website link here)</em><br><br>
+      📺 <strong><a href="#">Watch the TBRly YouTube Demo</a></strong> <em>(Add your YT link here)</em>
+    </td>
+  </tr>
+</table>
+
+---
 
 ## 🤝 Share the Knowledge
 
@@ -112,8 +170,14 @@ Feel free to share them with your peers, friends, or anyone in your learning cir
     <a href="https://www.youtube.com/@TechDev_Insights" target="_blank" style="margin-right: 45px;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" width="55" height="40" alt="YouTube"/>
   </a>
-  <a href="https://x.com/SukritiSpeak" target="_blank">
+  <a href="https://x.com/SukritiSpeak" target="_blank" style="margin-right: 45px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" width="40" height="40" alt="X (Twitter)"/>
+  </a>
+  <a href="https://dev.to/sukriti_c" target="_blank" style="margin-right: 45px;">
+    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" width="40" height="40" alt="Dev.to"/>
+  </a>
+  <a href="https://www.producthunt.com/products/tbrly?launch=tbrly" target="_blank">
+    <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1&theme=light" width="180" height="40" alt="Product Hunt"/>
   </a>
 </p>
 
