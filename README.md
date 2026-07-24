@@ -134,13 +134,13 @@ We welcome contributions! If you have suggestions for improvements, found a bug,
       <img src="assets/logo.jpeg" width=750" alt="TBRly Logo">
     </td>
     <td>
-      If you appreciate tools like ZeroTab that streamline your workflow and boost productivity, you'll love <strong>TBRly</strong>! It's our product built for professionals who want to organize and reclaim their time.
+      If you appreciate tools like <strong>ZeroTab</strong> that streamline your workflow and boost productivity, you'll love <strong>TBRly</strong>! It's our product built for professionals who want to organize and reclaim their time.
     </td>
   </tr>
   <tr>
     <td>
-      🔗 <strong><a href="#">Visit the TBRly Website</a></strong> <em>(Add your website link here)</em><br><br>
-      📺 <strong><a href="#">Watch the TBRly YouTube Demo</a></strong> <em>(Add your YT link here)</em>
+      🔗 <strong><a href="https://tbrly-app.vercel.app/">Visit the TBRly Website</a></strong> <br><br>
+      📺 <strong><a href="https://www.youtube.com/playlist?list=PLWLCpnAAmbVk">Watch the TBRly YouTube Demo</a></strong> <br><br>
     </td>
   </tr>
 </table>
